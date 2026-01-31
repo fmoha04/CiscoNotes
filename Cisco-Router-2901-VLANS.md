@@ -18,3 +18,8 @@ Router# show ip interface brief // muestra info acerca de las interfaces como la
 Router# copy running-config startup-config
 ```
 
+> set a hostname
+```
+Router(config)# hostname router1
+```
+
