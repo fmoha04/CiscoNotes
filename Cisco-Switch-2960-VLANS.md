@@ -38,13 +38,3 @@ Switch# show interfaces trunk // lista los puertos con enlaces trunk y Vlans per
 Switch# show ip interface brief // muestra info acerca de las interfaces como las IP´s
 ```
 
-> copy config(RAM) to NVRAM
-```
-Switch# copy running-config startup-config
-```
-
-> set a hostname
-```
-Switch(config)# hostname switch1
-```
-
