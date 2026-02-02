@@ -15,8 +15,8 @@ Router(config-if)# ip nat outside
 
 > Configure NAT (PAT)
 ```
-ip nat inside source list 1 interface GigabitEthernet 0/1 overload
-ip nat inside source list 2 interface GigabitEthernet 0/1 overload
+Router(config)# ip nat inside source list 1 interface GigabitEthernet 0/1 overload
+Router(config)# ip nat inside source list 2 interface GigabitEthernet 0/1 overload
 ```
 
 > Adding an Static Route
