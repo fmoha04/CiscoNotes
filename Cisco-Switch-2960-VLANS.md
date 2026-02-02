@@ -17,6 +17,7 @@ Switch(config-if)# no shutdown
 Switch(config)# int gig0/1
 Switch(config-if)# switchport mode trunk
 Switch(config-if)# switchport trunk allowed vlan 51,52,99
+Switch(config-if)# switchport trunk native vlan 1000
 Switch(config-if)# no shutdown
 ```
 
