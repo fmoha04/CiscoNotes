@@ -68,6 +68,9 @@ Router(config)# access-list 1 permit 10.0.0.0 0.0.255.255
 Router(config)# ip nat inside source list 1 interface GigabitEthernet 0/1 overload
 ````
 ````
+Router(config)# ip route 0.0.0.0 0.0.0.0 GigabitEthernet 0/1
+````
+````
 show ip nat translations
 show ip nat statistics
 ````
