@@ -19,6 +19,17 @@ Router(config)# ip nat inside source list 1 interface GigabitEthernet 0/1 overlo
 Router(config)# ip nat inside source list 2 interface GigabitEthernet 0/1 overload
 ```
 
+> Configure SNAT
+```
+access-list 1 permit 10.0.0.0 0.0.0.255
+ip nat inside source list 1 interface GigabitEthernet 0/1 overload
+interface GigabitEthernet 0/0
+ip nat inside
+interface GigabitEthernet 0/1
+ip nat outside
+ip route 0.0.0.0 0.0.0.0 192.168.133.254
+```
+
 > Adding an Static Route
 ```
 Router(config)# ip route 0.0.0.0 0.0.0.0 192.168.133.254
