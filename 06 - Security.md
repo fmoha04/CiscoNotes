@@ -5,6 +5,7 @@ switchport mode access
 switchport port-security
 switchport port-security violation shutdown
 ```
+
 > MITIGATION AGAINST DHCP SPOOFING
 ```
 ip dhcp snooping
@@ -12,6 +13,7 @@ ip dhcp snooping vlan 1
 interface FastEthernet0/2
 ip dhcp snooping trust
 ```
+
 > MITIGATION AGAINST ARP POISONING
 ```
 ip arp inspection trust
@@ -22,7 +24,7 @@ ip arp inspection filter srvdhcp vlan 1
 ip source binding xx:xx:xx:xx:xx:xx vlan n 10.0.0.102 interface 2
 ```
 
-> OTHER COMMANDS
+> OTHER INFO COMMANDS
 ```
 clear mac address-table dynamic
 show port-security interface g1/0/3
