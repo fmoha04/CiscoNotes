@@ -31,6 +31,21 @@ ip arp inspection filter servidores vlan 1
 ip arp inspection validate <src-mac> <dst-mac> <IP>
 ```
 
+> MITIGATION AGAINST STP ATTACK WITH PORTFAST AND BPDUGUARD
+```
+int fa0/1
+switchport mode access
+spanning-tree portfast
+exit
+spanning-tree portfast default
+exit
+int fa0/1
+spanning-tree bpduguard enable
+exit
+spanning-tree portfast bpduguard default
+end
+```
+
 > INFO COMMANDS
 ```
 clear mac address-table dynamic
@@ -43,5 +58,6 @@ show logging
 no logging console
 show ip arp inspection
 show ip arp inspection interfaces
+show spanning-tree summary
 ```
 
