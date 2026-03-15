@@ -1,3 +1,8 @@
+> copy config(RAM) to NVRAM
+```
+Router# copy running-config startup-config
+```
+
 > Set a IP address
 ```
 Switch(config)# interface fa0/1
