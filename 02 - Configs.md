@@ -1,4 +1,4 @@
-> copy config(RAM) to NVRAM
+> Copy config(RAM) to NVRAM
 ```
 copy running-config startup-config
 ```
