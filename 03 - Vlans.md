@@ -4,12 +4,25 @@ Switch(config)# vlan 51
 Switch(config)# name Servers
 ```
 
+> other commands
+```
+Switch(config)# vlan 51 name Servers // create vlan and name it on one command
+Switch(config)# vlan 10,20,30 // create various vlans on one command
+Switch(config)# no vlan 10 // delete a specific vlan
+Switch# delete flash:vlan.dat // delete vlan info
+```
+
 > assign an vlan to an interface in mode access
 ```
 Switch(config)# int fa0/1
 Switch(config-if)# switchport mode access
 Switch(config-if)# switchport access vlan 51
 Switch(config-if)# no shutdown
+```
+
+> disable mode access port, changes to vlan1
+```
+Switch(config-if)# no switchport access vlan
 ```
 
 > assign an vlan to an interface in mode trunk
