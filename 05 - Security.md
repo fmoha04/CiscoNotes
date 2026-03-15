@@ -1,9 +1,12 @@
-> MITIGATION AGAINST MAC FLOODING
+> MITIGATION MAC FLOODING
 ```
-interface g1/0/3
-switchport mode access
-switchport port-security
-switchport port-security violation shutdown
+interface g1/0/3 // acceder a la interfaz deseada
+switchport mode access // activar mode access
+switchport port-security // activar port security
+switchport port-security violation <mode> // establecer un port-security-mode
+switchport port-security maximum <X> // poner un límite de mac´s
+switchport port-security mac-address sticky // adherir primera mac
+switchport port-security mac-address dirección <MAC> // fijar mac estatica
 ```
 
 > MITIGATION AGAINST DHCP SPOOFING
@@ -27,7 +30,7 @@ ip source binding xx:xx:xx:xx:xx:xx vlan n 10.0.0.102 interface 2
 > OTHER INFO COMMANDS
 ```
 clear mac address-table dynamic
-show port-security interface g1/0/3
+show port-security interface fa3
 show mac address-table
 show mac address-table count
 show ip dhcp snooping statistics
