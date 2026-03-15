@@ -5,6 +5,12 @@ Switch(config-if)# ip address 192.168.10.1 255.255.255.0
 Switch(config-if)# no shutdown
 ```
 
+> Set a interface range
+```
+Switch(config)# interface range fa1-4
+Switch(config)# interface range fa1, fa2, fa3, fa4
+```
+
 > Set a static route
 ```
 Router(config)# ip route <dest.network> <dest.mask.network> <next.hop>
@@ -51,7 +57,6 @@ Switch(config)# service password-encryption
 > Configure ssh key encryption method
 ```
 Switch(config)# crypto key generate rsa modulus 1024
-
 ```
 
 > Set a SSH version
