@@ -1,4 +1,4 @@
-> MITIGATION MAC FLOODING
+> MITIGATION MAC FLOODING WITH PORT-SECURITY
 ```
 interface g1/0/3 // acceder a la interfaz deseada
 switchport mode access // activar mode access
@@ -9,7 +9,7 @@ switchport port-security mac-address sticky // adherir primera mac
 switchport port-security mac-address dirección <MAC> // fijar mac estatica
 ```
 
-> MITIGATION AGAINST DHCP SPOOFING
+> MITIGATION AGAINST DHCP SPOOFING WITH DHCP SNOOPING
 ```
 ip dhcp snooping
 ip dhcp snooping vlan 1
@@ -17,17 +17,21 @@ interface FastEthernet0/2
 ip dhcp snooping trust
 ```
 
-> MITIGATION AGAINST ARP POISONING
+> MITIGATION AGAINST ARP POISONING WITH DAI
 ```
-ip arp inspection trust
-/or/
-arp access-list srvdhcp permit ip host 10.0.0.102 mac host xx:xx:xx:xx:xx:xx
-ip arp inspection filter srvdhcp vlan 1
-/or/
-ip source binding xx:xx:xx:xx:xx:xx vlan n 10.0.0.102 interface 2
+ip dhcp snooping
+ip dhcp snooping vlan 1
+ip arp inspection vlan 1
+int fa0/24
+ip dhcp snooping trust
+ip arp snooping trust
+arp access-list servidor
+permite ip host <IP> mac host <MAC>
+ip arp inspection filter servidores vlan 1
+ip arp inspection validate <src-mac> <dst-mac> <IP>
 ```
 
-> OTHER INFO COMMANDS
+> INFO COMMANDS
 ```
 clear mac address-table dynamic
 show port-security interface fa3
