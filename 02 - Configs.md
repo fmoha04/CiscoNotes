@@ -1,11 +1,16 @@
+> copy config(RAM) to NVRAM
+```
+copy running-config startup-config
+```
+
 > Copy running config into flash
 ```
-Switch# copy running-config flash:nombre_archivo
+copy running-config flash:nombre_archivo
 ```
 
 > Rename flash configs
 ```
-Switch# rename flash:config.text flash:config.old
+rename flash:config.text flash:config.old
 ```
 
 > Apply an existing flash config
